@@ -72,7 +72,7 @@ router.get('/categorias/add', (req, res) => {
 
 router.post('/categorias/edit', (req, res) => {
 
-    Categoria.findOne({_id: req.body.id}).then((categoria) => {
+    Categoria.findOne({_id: req.body.id.toString() }).then((categoria) => {
 
         categoria.nome = req.body.nome
         categoria.slug = req.body.slug
